@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="310.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="358.0" text="Input Word To Search Trough Twitter" textAlignment="JUSTIFY">
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="keywordtxt" prefHeight="39.0" prefWidth="307.0" promptText="i.e. soccer" />
+                  <Label prefHeight="27.0" prefWidth="219.0" text="For now only one word is allowed" textFill="#da1616">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" top="2.0" />
+               </padding>
+            </VBox>
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="28.0" />
+            <HBox prefHeight="100.0" prefWidth="256.0">
+               <children>
+                  <Button fx:id="startstream" mnemonicParsing="false" onAction="#startStream" text="Start Stream">
+                     <HBox.margin>
+                        <Insets right="5.0" top="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="8.0" />
+                  <Button fx:id="killstream" mnemonicParsing="false" onAction="#killStream" text="Kill Stream">
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Separator layoutX="10.0" layoutY="137.0" opacity="0.0" prefHeight="65.0" prefWidth="600.0" />
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"  prefHeight="346.0" prefWidth="600.0">
+         <children>
+            <TextArea fx:id="output_area" layoutX="14.0" layoutY="26.0"  maxHeight="1920" maxWidth="1080" prefHeight="263.0" prefWidth="569.0" wrapText="true" />
+         </children>
+      </Pane>
+      <Separator opacity="0.0" prefHeight="83.0" prefWidth="600.0" />
+      <HBox prefHeight="65.0" prefWidth="600.0">
+         <children>
+            <ChoiceBox fx:id="display_choice" prefWidth="150.0" value="Score">
+               <!--<items>-->
+                  <!---->
+               <!--</items>-->
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="49.0" prefWidth="311.0" />
+            <Button fx:id="grabdata" mnemonicParsing="false" onAction="#grabdata" onMousePressed="#printwait" prefHeight="39.0" prefWidth="109.0" text="Grab Data">
+               <HBox.margin>
+                  <Insets bottom="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Separator layoutX="10.0" layoutY="421.0" opacity="0.0" prefHeight="83.0" prefWidth="600.0" />
+   </children>
+   <opaqueInsets>
+      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+   </opaqueInsets>
+</VBox>
